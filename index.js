@@ -5,7 +5,10 @@ import router from "./routes/index.js";
 const app = express();
 const URI = process.env.MONGO_URI || 'mongodb+srv://admin123:admin123@cluster0.x20floc.mongodb.net/?retryWrites=true&w=majority'
 
-mongoose.connect(URI)
+mongoose.connect(URI, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+})
 
 const db = mongoose.connection;
 db.on('error', (error) => console.log(error));
