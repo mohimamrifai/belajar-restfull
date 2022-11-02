@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import router from "./routes/index.js";
 
 const app = express();
-const URI = 'mongodb+srv://admin123:admin123@cluster0.x20floc.mongodb.net/?retryWrites=true&w=majority'
+const URI = process.env.MONGO_URI || 'mongodb+srv://admin123:admin123@cluster0.x20floc.mongodb.net/?retryWrites=true&w=majority'
 
 mongoose.connect(URI)
 
