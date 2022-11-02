@@ -12,9 +12,10 @@ db.on('error', (error) => console.log(error));
 db.once('open', () => console.log('berhasil terkoneksi'));
 
 
+const port = process.env.PORT || 3000
 
 
-app.listen(3000, () => console.log(`server is running at port http://localhost:3000`));
+app.listen(port, () => console.log(`server is running at port http://localhost:3000`));
 
 app.use(express.json());
-app.use('/api/v1', router);
+app.use('/api/v1/resep', router);
